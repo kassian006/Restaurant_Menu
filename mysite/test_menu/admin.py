@@ -69,4 +69,3 @@ class ProductAdmin(TranslationAdmin):
 
 
 admin.site.register(Category)
-admin.site.register(MainMenu)

@@ -32,15 +32,6 @@ class ImageAboutUs(models.Model):
     image_about_us = models.ImageField(upload_to='about_us_images/', null=True, blank=True)
 
 
-class MainMenu(models.Model):
-    title = models.CharField(max_length=233)
-    description = models.TextField()
-    price = models.DecimalField(decimal_places=2, max_digits=10)
-
-    def __str__(self):
-        return f'{self.title}-{self.description}-{self.price}'
-
-
 class Extras(models.Model):
     title = models.CharField(max_length=233)
     price = models.DecimalField(max_digits=10, decimal_places=2)

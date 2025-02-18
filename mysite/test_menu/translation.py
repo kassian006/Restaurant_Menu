@@ -1,4 +1,4 @@
-from .models import Category, BestSellers, AboutUs, Extras, MainMenu, FullMainMenu
+from .models import Category, BestSellers, AboutUs, Extras, FullMainMenu
 from modeltranslation.translator import TranslationOptions,register
 
 @register(Category)
@@ -26,6 +26,3 @@ class ProductTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
 
 
-@register(MainMenu)
-class ProductTranslationOptions(TranslationOptions):
-    fields = ('title', 'description')

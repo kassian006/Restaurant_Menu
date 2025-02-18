@@ -1,9 +1,14 @@
 from rest_framework import viewsets
 from .serializers import *
 
-class CategoryViewSet(viewsets.ModelViewSet):
+class CategoryListViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+    serializer_class = CategoryListSerializer
+
+
+class CategoryDetailViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategoryListSerializer
 
 
 class BestSellersViewSet(viewsets.ModelViewSet):
@@ -11,21 +16,32 @@ class BestSellersViewSet(viewsets.ModelViewSet):
     serializer_class = BestSellersSerializer
 
 
-class MainMenuViewSet(viewsets.ModelViewSet):
-    queryset = MainMenu.objects.all()
-    serializer_class = MainMenuSerializer
-
 
 class AboutUsViewSet(viewsets.ModelViewSet):
     queryset = AboutUs.objects.all()
     serializer_class = AboutUsSerializer
 
 
-class FullMainMenuViewSet(viewsets.ModelViewSet):
+class FullMainMenuListViewSet(viewsets.ModelViewSet):
     queryset = FullMainMenu.objects.all()
-    serializer_class = FullMainMenuSerializer
+    serializer_class = FullMainMenuListSerializer
+
+
+class FullMainMenuSimpleViewSet(viewsets.ModelViewSet):
+    queryset = FullMainMenu.objects.all()
+    serializer_class = FullMainMenuSimpleSerializer
 
 
 class ExtrasViewSet(viewsets.ModelViewSet):
     queryset = Extras.objects.all()
     serializer_class = ExtrasSerializer
+
+
+class DrinksViewSet(viewsets.ModelViewSet):
+    queryset = Drinks.objects.all()
+    serializer_class = DrinkSerializer
+
+
+class FullMainMenuDetailViewSet(viewsets.ModelViewSet):
+    queryset = FullMainMenu.objects.all()
+    serializer_class = FullMainMenuDetailSerializer
