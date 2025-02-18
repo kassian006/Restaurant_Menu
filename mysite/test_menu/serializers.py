@@ -31,12 +31,6 @@ class FullMainMenuSerializer(serializers.ModelSerializer):
         fields = ['title', 'description', 'price', 'image_menu']
 
 
-class MainMenuSerializer(serializers.ModelSerializer):
-    class Meta:
-        models = MainMenu
-        fields = ['title', 'description', 'price']
-
-
 class ExtrasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Extras

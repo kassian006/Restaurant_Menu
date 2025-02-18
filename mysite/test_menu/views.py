@@ -11,11 +11,6 @@ class BestSellersViewSet(viewsets.ModelViewSet):
     serializer_class = BestSellersSerializer
 
 
-class MainMenuViewSet(viewsets.ModelViewSet):
-    queryset = MainMenu.objects.all()
-    serializer_class = MainMenuSerializer
-
-
 class AboutUsViewSet(viewsets.ModelViewSet):
     queryset = AboutUs.objects.all()
     serializer_class = AboutUsSerializer
