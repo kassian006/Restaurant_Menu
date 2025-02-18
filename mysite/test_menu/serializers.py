@@ -7,12 +7,6 @@ class CategoryListSerializer(serializers.ModelSerializer):
         fields = ['id', 'category_name']
 
 
-class CategoryDetailSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = ['category_name']
-
-
 class BestSellersSerializer(serializers.ModelSerializer):
     class Meta:
         model = BestSellers
@@ -56,9 +50,17 @@ class DrinkSerializer(serializers.ModelSerializer):
 
 
 class FullMainMenuDetailSerializer(serializers.ModelSerializer):
-    extras = ExtrasSerializer(read_only=True)
-    drink = DrinkSerializer(read_only=True)
+    extras_menu = ExtrasSerializer(read_only=True, many=True)
+    drinks_menu = DrinkSerializer(read_only=True, many=True)
     class Meta:
         model = FullMainMenu
-        fields = ['title', 'description', 'price', 'image_menu']
+        fields = ['title', 'description', 'price', 'image_menu', 'extras_menu', 'drinks_menu']
+
+
+class CategoryDetailSerializer(serializers.ModelSerializer):
+    category_menu = FullMainMenuDetailSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = Category
+        fields = ['category_name', 'category_menu']
 

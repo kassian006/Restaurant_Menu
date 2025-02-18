@@ -1,33 +1,33 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from .serializers import *
 
-class CategoryListViewSet(viewsets.ModelViewSet):
+class CategoryListAPIView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategoryListSerializer
 
 
-class CategoryDetailViewSet(viewsets.ModelViewSet):
+class CategoryDetailAPIView(generics.RetrieveAPIView):
     queryset = Category.objects.all()
-    serializer_class = CategoryListSerializer
+    serializer_class = CategoryDetailSerializer
 
 
-class BestSellersViewSet(viewsets.ModelViewSet):
+class BestSellersAPIView(generics.ListAPIView):
     queryset = BestSellers.objects.all()
     serializer_class = BestSellersSerializer
 
 
 
-class AboutUsViewSet(viewsets.ModelViewSet):
+class AboutUsAPIView(generics.ListAPIView):
     queryset = AboutUs.objects.all()
     serializer_class = AboutUsSerializer
 
 
-class FullMainMenuListViewSet(viewsets.ModelViewSet):
+class FullMainMenuListAPIView(generics.ListAPIView):
     queryset = FullMainMenu.objects.all()
     serializer_class = FullMainMenuListSerializer
 
 
-class FullMainMenuSimpleViewSet(viewsets.ModelViewSet):
+class FullMainMenuSimpleAPIView(generics.ListAPIView):
     queryset = FullMainMenu.objects.all()
     serializer_class = FullMainMenuSimpleSerializer
 
@@ -42,6 +42,6 @@ class DrinksViewSet(viewsets.ModelViewSet):
     serializer_class = DrinkSerializer
 
 
-class FullMainMenuDetailViewSet(viewsets.ModelViewSet):
+class FullMainMenuDetailAPIView(generics.RetrieveAPIView):
     queryset = FullMainMenu.objects.all()
     serializer_class = FullMainMenuDetailSerializer
