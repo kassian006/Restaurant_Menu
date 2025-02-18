@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'test_menu',
     'rest_framework_swagger',
     'drf_yasg',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -133,6 +134,10 @@ MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
